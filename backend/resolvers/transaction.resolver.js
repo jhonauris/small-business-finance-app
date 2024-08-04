@@ -30,9 +30,8 @@ const transactionResolver = {
       try {
         const newTransaction = new Transaction({
           ...input,
-          userId: context.getUserId()._id,
+          userId: context.getUser()._id,
         });
-
         await newTransaction.save();
         return newTransaction;
       } catch (err) {
