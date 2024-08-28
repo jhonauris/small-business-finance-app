@@ -53,7 +53,7 @@ const userResolver = {
         return user;
       } catch (err) {
         console.error("Error in login: ", err);
-        throw new Error(error.message || "Internal server error");
+        throw new Error(err.message || "Internal server error");
       }
     },
     logout: async (_, __, context) => {
