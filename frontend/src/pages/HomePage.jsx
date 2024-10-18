@@ -49,11 +49,11 @@ const HomePage = () => {
 
       categories.forEach((category) => {
         if (category === "sale") {
-          backgroundColors.push("rgba(75, 192, 192)");
-          borderColors.push("rgba(75, 192, 192)");
+          backgroundColors.push("rgba(52 211 153)");
+          borderColors.push("rgba(52 211 153)");
         } else if (category === "expense") {
-          backgroundColors.push("rgba(255, 99, 132)");
-          borderColors.push("rgba(255, 99, 132)");
+          backgroundColors.push("rgba(255, 84, 96)");
+          borderColors.push("rgba(255, 84, 96)");
         } else if (category === "investment") {
           backgroundColors.push("rgba(54, 162, 235)");
           borderColors.push("rgba(54, 162, 235)");
@@ -62,6 +62,7 @@ const HomePage = () => {
 
       setChartData((prev) => ({
         labels: categories,
+
         datasets: [
           {
             ...prev.datasets[0],
@@ -91,7 +92,7 @@ const HomePage = () => {
     <>
       <div className="flex flex-col gap-6 items-center max-w-7xl mx-auto z-20 relative justify-center">
         <div className="flex items-center">
-          <p className="md:text-4xl text-2xl lg:text-4xl font-bold text-center relative z-50 mb-4 mr-4 bg-gradient-to-r from-pink-600 via-indigo-500 to-pink-400 inline-block text-transparent bg-clip-text">
+          <p className="md:text-4xl text-2xl lg:text-4xl font-bold text-center relative z-50 mb-4 mr-4 bg-gradient-to-r from-amber-400 via-amber-400 to-amber-400 inline-block text-transparent bg-clip-text">
             Small business finance tracker
           </p>
           <img

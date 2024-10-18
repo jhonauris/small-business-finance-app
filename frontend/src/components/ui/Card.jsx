@@ -11,8 +11,8 @@ import { useMutation } from "@apollo/client";
 import { DELETE_TRANSACTION } from "../../graphql/mutations/transaction.mutation";
 
 const categoryColorMap = {
-  sale: "from-green-700 to-green-400",
-  expense: "from-pink-800 to-pink-600",
+  sale: "from-emerald-400 to-emerald-400",
+  expense: "from-rose-500 to-rose-500",
   investment: "from-blue-700 to-blue-400",
   // Add more categories and corresponding color classes as needed
 };
