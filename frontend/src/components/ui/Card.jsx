@@ -13,7 +13,7 @@ import { DELETE_TRANSACTION } from "../../graphql/mutations/transaction.mutation
 const categoryColorMap = {
   sale: "from-emerald-400 to-emerald-400",
   expense: "from-rose-500 to-rose-500",
-  investment: "from-blue-700 to-blue-400",
+  investment: "from-sky-400 to-sky-400",
   // Add more categories and corresponding color classes as needed
 };
 
