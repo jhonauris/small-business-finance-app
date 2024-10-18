@@ -99,7 +99,7 @@ const TransactionForm = () => {
               id="category"
               name="category"
             >
-              <option value={"saving"}>Saving</option>
+              <option value={"sale"}>Sale</option>
               <option value={"expense"}>Expense</option>
               <option value={"investment"}>Investment</option>
             </select>
