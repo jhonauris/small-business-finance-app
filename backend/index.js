@@ -2,6 +2,8 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
+
 import passport from "passport";
 import session from "express-session";
 import connectMongo from "connect-mongodb-session";
@@ -21,7 +23,9 @@ import { configurePassport } from "./passport/passport.config.js";
 dotenv.config();
 configurePassport();
 
+const __dirname = path.resolve();
 const app = express();
+
 const httpServer = http.createServer(app);
 
 const MongoDBStore = connectMongo(session);
@@ -73,6 +77,15 @@ app.use(
     context: async ({ req, res }) => buildContext({ req, res }),
   })
 );
+
+// npm run build will build your frontend app and it will be the optimized version of your application
+app.use(express.static(path.join(__dirname, "frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+});
+
+// We will be using render.com to depploy our backend and frontend under the same domain
 
 // Modified server startup
 await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
